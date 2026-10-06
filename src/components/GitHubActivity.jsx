@@ -43,6 +43,7 @@ export default function GitHubActivity() {
     },
     {
       name: "SmartPort-AI",
+      hidden: true,
       title: {
         th: "SmartPort AI (AI Stock Analytics & Simulator)",
         en: "SmartPort AI (AI Stock Analytics & Simulator)"
@@ -72,6 +73,9 @@ export default function GitHubActivity() {
       url: "https://github.com/664244132"
     }
   ];
+
+  // กรองเฉพาะ Repository ที่ไม่ได้ตั้งค่า hidden เอาไว้
+  const visibleRepositories = topRepositories.filter((repo) => !repo.hidden);
 
   const githubStats = [
     {
@@ -167,7 +171,7 @@ export default function GitHubActivity() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {topRepositories.map((repo, idx) => (
+              {visibleRepositories.map((repo, idx) => (
                 <motion.a
                   key={repo.name}
                   href={repo.url}

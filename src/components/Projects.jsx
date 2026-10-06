@@ -22,9 +22,12 @@ export default function Projects() {
   const toastTimeoutRef = useRef(null);
   const sectionRef = useRef(null);
 
-  const totalPages = Math.ceil(projectsData.length / PROJECTS_PER_PAGE);
+  // กรองเฉพาะโปรเจกต์ที่ไม่ได้ตั้งค่า hidden เอาไว้
+  const visibleProjects = projectsData.filter((project) => !project.hidden);
+
+  const totalPages = Math.ceil(visibleProjects.length / PROJECTS_PER_PAGE);
   const startIndex = (currentPage - 1) * PROJECTS_PER_PAGE;
-  const currentProjects = projectsData.slice(startIndex, startIndex + PROJECTS_PER_PAGE);
+  const currentProjects = visibleProjects.slice(startIndex, startIndex + PROJECTS_PER_PAGE);
 
   // ฟังก์ชันแสดงข้อความแจ้งเตือนสถานะผลงาน และหน่วงเวลาปิดอัตโนมัติ
   const triggerNotice = (message) => {

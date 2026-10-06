@@ -121,6 +121,7 @@ export const projectsData = [
   },
   {
     id: "ai-portfolio-simulator",
+    hidden: true,
     title: {
       th: "SmartPort AI (AI Stock Analytics & Portfolio Simulator)",
       en: "SmartPort AI (AI Stock Analytics & Portfolio Simulator)"
