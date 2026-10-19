@@ -6,6 +6,7 @@ export const profileData = {
   thaiName: "ปุรเชษฐ์ อบรม",
   englishName: "Purachet Aoborm",
   nickname: "Pai",
+  avatar: "/images/pic1.png",
   projectName: "MyResume",
   fullName: "Purachet Aoborm (ปุรเชษฐ์ อบรม)",
   title: {

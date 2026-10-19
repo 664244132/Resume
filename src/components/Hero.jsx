@@ -37,6 +37,29 @@ export default function Hero() {
           />
         </div>
 
+        {/* Profile Image (pic1.png) */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="relative mb-6 group flex justify-center"
+        >
+          {/* Ambient Glow */}
+          <div className="absolute -inset-2 bg-gradient-to-r from-[#8B5CF6]/40 via-[#6366F1]/30 to-[#38BDF8]/40 rounded-full blur-xl opacity-60 group-hover:opacity-90 transition-opacity duration-500 pointer-events-none" />
+
+          {/* Avatar Container with Gradient Ring & Border */}
+          <div className="relative w-36 h-36 sm:w-44 sm:h-44 md:w-48 md:h-48 rounded-full p-1 bg-gradient-to-b from-[#8B5CF6] via-[#272A33] to-[#8B5CF6]/50 shadow-2xl shadow-[#8B5CF6]/20 transition-transform duration-500 group-hover:scale-105">
+            <img
+              src={profileData.avatar || "/images/pic1.png"}
+              alt={getLocalized(profileData.name)}
+              className="w-full h-full object-cover object-top rounded-full ring-2 ring-[#0F1117]"
+              width="192"
+              height="192"
+              loading="eager"
+            />
+          </div>
+        </motion.div>
+
         {/* Subtitle / Role & Affiliation */}
         <div className="max-w-5xl mx-auto mb-4 flex flex-col items-center">
           <h2 className="text-lg sm:text-2xl font-bold text-title-readable leading-relaxed text-center">
